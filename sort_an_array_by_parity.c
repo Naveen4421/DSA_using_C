@@ -1,0 +1,17 @@
+int* sortArrayByParityII(int* nums, int numsSize, int* returnSize) {
+    *returnSize=numsSize;
+    int j=1;
+    for(int i=0;i<numsSize-1;i+=2){
+        if(nums[i]%2!=0){
+            while(nums[j]%2!=0){
+                j+=2;
+            }
+            int temp=nums[i];
+            nums[i]=nums[j];
+            nums[j]=temp;
+        }
+        
+    }
+    return nums;
+    
+}
